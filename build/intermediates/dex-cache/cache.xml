@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\dmoraes\AndroidStudioProjects\SimpleNumericKeyboard\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.1"
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="C:\Users\dmoraes\AndroidStudioProjects\SimpleNumericKeyboard\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_4f2d20bd0244497ebccac1aeb4865cebd32e07bd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\dmoraes\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\24.2.1\support-annotations-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.1"
+        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
+        <dex dex="C:\Users\dmoraes\AndroidStudioProjects\SimpleNumericKeyboard\app\build\intermediates\pre-dexed\debug\support-annotations-24.2.1_6318463150f0c4abda648dd5608a56b7ade51a05.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\dmoraes\AndroidStudioProjects\SimpleNumericKeyboard\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.1"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="C:\Users\dmoraes\AndroidStudioProjects\SimpleNumericKeyboard\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_63b5f098657ee62d61eef8d662fef49cbb501335.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\dmoraes\AndroidStudioProjects\SimpleNumericKeyboard\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.1"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="C:\Users\dmoraes\AndroidStudioProjects\SimpleNumericKeyboard\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-24.2.1_3826b8edf7851a6229bdea8607616413955ddf55.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\dmoraes\AndroidStudioProjects\SimpleNumericKeyboard\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.1"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="C:\Users\dmoraes\AndroidStudioProjects\SimpleNumericKeyboard\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_171c2329fd5fda58040975251b34557d2453ac7f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\dmoraes\AndroidStudioProjects\SimpleNumericKeyboard\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.1"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="C:\Users\dmoraes\AndroidStudioProjects\SimpleNumericKeyboard\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_d776b1f40a90a309a7a1a97ac5926a97197d2ad8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\dmoraes\AndroidStudioProjects\SimpleNumericKeyboard\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.1"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="C:\Users\dmoraes\AndroidStudioProjects\SimpleNumericKeyboard\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-24.2.1_400ce003a99eed44fa032a25a6af9a30aff4c515.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\dmoraes\AndroidStudioProjects\SimpleNumericKeyboard\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.1"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="C:\Users\dmoraes\AndroidStudioProjects\SimpleNumericKeyboard\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_e1baca36e14fcf71a9f3dfb6eb5bff216e2df44b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\dmoraes\AndroidStudioProjects\SimpleNumericKeyboard\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.1"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\dmoraes\AndroidStudioProjects\SimpleNumericKeyboard\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-24.2.1_9a6f5db12c0c37d9e58b435c8b8b54489d55dd86.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\dmoraes\AndroidStudioProjects\SimpleNumericKeyboard\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.1"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="C:\Users\dmoraes\AndroidStudioProjects\SimpleNumericKeyboard\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-24.2.1_7f5bbb3a11d0a975d0951feac83851339527d28c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\dmoraes\AndroidStudioProjects\SimpleNumericKeyboard\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.1"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="C:\Users\dmoraes\AndroidStudioProjects\SimpleNumericKeyboard\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-24.2.1_918bc59e6b70a9de4930b1436b043d0def7e4c4f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\dmoraes\AndroidStudioProjects\SimpleNumericKeyboard\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.1"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="C:\Users\dmoraes\AndroidStudioProjects\SimpleNumericKeyboard\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-24.2.1_5e40b76d6ae7d1a33d570526211b15d5acc5d7c8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\dmoraes\AndroidStudioProjects\SimpleNumericKeyboard\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.1"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="C:\Users\dmoraes\AndroidStudioProjects\SimpleNumericKeyboard\app\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-24.2.1_5256ec98434abc6a6b4ed48e5d9eca75c41223b3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\dmoraes\AndroidStudioProjects\SimpleNumericKeyboard\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.1"
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="C:\Users\dmoraes\AndroidStudioProjects\SimpleNumericKeyboard\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-24.2.1_3d3bb262b6e09334d0300f658648feab59c3c26d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\dmoraes\AndroidStudioProjects\SimpleNumericKeyboard\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.1"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="C:\Users\dmoraes\AndroidStudioProjects\SimpleNumericKeyboard\app\build\intermediates\pre-dexed\debug\com.android.support-support-compat-24.2.1_1a0734403fd044fedcc34e1095b7ed913b1143aa.jar" />
+    </item>
+
+</items>
