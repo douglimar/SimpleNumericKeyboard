@@ -5,6 +5,7 @@ import android.app.PendingIntent;
 import android.app.TaskStackBuilder;
 import android.content.Context;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.app.NotificationCompat;
@@ -24,9 +25,15 @@ import static java.lang.System.exit;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static final String EXTRA_MESSAGE = new String ("br.com.ddmsoftware.simplenumerickeyboard.MESSAGE");
+
+    MediaPlayer errorSound;
+    MediaPlayer okSound;
+
     Character[] aSignal = {'+', '-', '/', 'x'};
     Boolean bZeroDivision = false;
 
+    float fPercAcertos = 0;
     int iCountAcertos = 0;
     int iCountErros = 0;
 
@@ -37,6 +44,9 @@ public class MainActivity extends AppCompatActivity {
     TextView tvResultCalculado;
     TextView tvResultDigitado;
     TextView tvCountDown;
+
+    TextView tvGridResult_TotAcertos;
+    TextView tvGridResult_TotErros;
 
     TextView textView;
     @Override
@@ -51,10 +61,10 @@ public class MainActivity extends AppCompatActivity {
         tvResultDigitado = (TextView) findViewById(R.id.tvResultDigitado);
         tvResultCalculado = (TextView) findViewById(R.id.tvResultCalculado);
 
-        tvCountDown = (TextView)findViewById(R.id.tvCountdown);
+        tvGridResult_TotAcertos = (TextView) findViewById(R.id.tvGridResult_TotalAcertos);
+        tvGridResult_TotErros = (TextView) findViewById(R.id.tvGridResult_TotalErros);
 
-        tvCountDown.setText("");
-        textView.setText("");
+        tvCountDown = (TextView)findViewById(R.id.tvCountdown);
 
         final Button btnOne = (Button) findViewById(R.id.btnOne);
         final Button btnTwo = (Button) findViewById(R.id.btnTwo);
@@ -66,13 +76,16 @@ public class MainActivity extends AppCompatActivity {
         final Button btnEight = (Button) findViewById(R.id.btnEight);
         final Button btnNine = (Button) findViewById(R.id.btnNine);
         final Button btnZero = (Button) findViewById(R.id.btnZero);
-
         final Button btnSend = (Button)findViewById(R.id.btnSend);
-        final Button btnNotification = (Button)findViewById(R.id.btnNotification);
-        final Button btnScheduledNotification = (Button) findViewById(R.id.btnScheduledNotification);
-        final Button btnCountdown = (Button) findViewById(R.id.btnCountdown);
-
         final Button btnErase = (Button) findViewById(R.id.btnErase);
+
+        tvGridResult_TotErros.setText("");
+        tvGridResult_TotAcertos.setText("");
+        tvCountDown.setText("");
+        textView.setText("");
+
+        errorSound = MediaPlayer.create(MainActivity.this, R.raw.error);
+        okSound = MediaPlayer.create(MainActivity.this,R.raw.ok);
 
         btnErase.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,13 +95,6 @@ public class MainActivity extends AppCompatActivity {
                     tvResultDigitado.setText(tvResultDigitado.getText().toString().substring(0,tvResultDigitado.getText().length()-1));
             }
         });
-
-        STOP_COUNTDOWN = false;
-        mCountdown("20");
-
-        //clearFields(true);
-        generateCalc();
-
 
         btnOne.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -181,42 +187,46 @@ public class MainActivity extends AppCompatActivity {
 
                     }
 
+                    fPercAcertos = iCountAcertos*100/(iCountAcertos+iCountErros);
+
+                    tvGridResult_TotAcertos.setText(String.valueOf(iCountAcertos));
+                    tvGridResult_TotErros.setText(String.valueOf(iCountErros));
+
                     clearFields(true);
                     generateCalc();
                 }
-
-
-
             }
         });
 
+        // Enable Notification Service (12 hours)
+        NotificationEventReceiver.setupAlarm(getApplicationContext());
 
+        STOP_COUNTDOWN = false;
+        mCountdown("60");
 
-        btnNotification.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                sendNotification2();
-                STOP_COUNTDOWN = true;
-            }
-        });
-
-        btnScheduledNotification.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NotificationEventReceiver.setupAlarm(getApplicationContext());
-            }
-        });
-
-        btnCountdown.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                STOP_COUNTDOWN = false;
-                mCountdown("10");
-            }
-        });
+        //clearFields(true);
+        generateCalc();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
 
+        errorSound = MediaPlayer.create(MainActivity.this, R.raw.error);
+        okSound = MediaPlayer.create(MainActivity.this,R.raw.ok);
+
+        iCountAcertos = 0;
+        iCountErros = 0;
+        fPercAcertos = 0;
+
+        tvGridResult_TotAcertos.setText("");
+        tvGridResult_TotErros.setText("");
+
+        generateCalc();
+
+        STOP_COUNTDOWN = false;
+        mCountdown("60");
+    }
 
     private void getKeyboardEntry(Button mButtonText) {
         textView.setText(textView.getText()+ mButtonText.getText().toString());
@@ -292,18 +302,31 @@ public class MainActivity extends AppCompatActivity {
                 System.out.println(i--);
                 if ( (i< 0) || (STOP_COUNTDOWN ==true)) {
                     timer.cancel();
-
-                    //Toast.makeText(MainActivity.this, "Total de Acertos: " + iCountAcertos + "\n + Total de Erros: " + iCountErros, Toast.LENGTH_SHORT).show();
                 }
 
                 // Apenas para atualizar o User Interface
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        tvCountDown.setText("Countdown: " + (i+1));
+                        tvCountDown.setText("Countdown:\n" + (i+1));
 
-                        if ((STOP_COUNTDOWN==true) || i<0)
+                        if ((STOP_COUNTDOWN==true) || i<0) {
                             Toast.makeText(MainActivity.this, "Total de Acertos: " + iCountAcertos + "\n + Total de Erros: " + iCountErros, Toast.LENGTH_SHORT).show();
+
+                            String strResultado = "Time is up\n================" +
+                                    "\nTotal de Acertos: " + iCountAcertos +
+                                    "\nTotal de Erros: " + iCountErros ;
+
+                            String sResultado = iCountAcertos +";" + iCountErros + ";" + fPercAcertos;
+
+                            Toast.makeText(getApplicationContext(), sResultado, Toast.LENGTH_LONG).show();
+
+                            // Exibe resultado em outra Activity
+                            Intent intent = new Intent(getApplication(), ResultActivity.class);
+                            intent.putExtra(EXTRA_MESSAGE, sResultado);
+
+                            startActivity(intent);
+                        }
 
                     }
                 });
@@ -326,10 +349,14 @@ public class MainActivity extends AppCompatActivity {
     private boolean validaResultado(int pValorCalculado, int pValorDigitado) {
 
         boolean ok;
-        if (pValorCalculado == pValorDigitado)
+        if (pValorCalculado == pValorDigitado) {
             ok = true;
-        else
+            //okSound.start();
+        }
+        else {
             ok = false;
+            //zerrorSound.start();
+        }
         return ok;
     }
 

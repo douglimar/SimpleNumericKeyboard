@@ -12,39 +12,95 @@
     tools:context="br.com.ddmsoftware.simplenumerickeyboard.MainActivity">
 
     <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/linearResult">
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/gridResult"
+            android:rowCount="2"
+            android:layout_gravity="center_horizontal"
+            android:columnCount="2">
+
+            <TextView
+                android:text="@string/edtResultGrid_TotalAcertos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView3"
+                android:layout_gravity="left"
+                android:textStyle="bold" />
+
+            <TextView
+                android:text="TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvGridResult_TotalErros"
+                android:layout_row="1"
+                android:layout_column="1"
+                android:layout_gravity="right" />
+
+            <TextView
+                android:text="TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvGridResult_TotalAcertos"
+                android:layout_row="1"
+                android:layout_column="0"
+                android:layout_gravity="left" />
+
+            <TextView
+                android:text="@string/tvResultGrid_Erros"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView4"
+                android:layout_row="0"
+                android:layout_column="1"
+                android:layout_gravity="right"
+                android:textStyle="bold" />
+        </GridLayout>
+    </LinearLayout>
+
+    <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:id="@+id/linearNumbers">
 
         <TextView
             android:text="0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/tvFirstNumber"
-            android:layout_weight="1"
             android:textStyle="normal|bold"
-            android:textSize="24sp"
-            android:textAlignment="textEnd" />
+            android:textSize="30sp"
+            android:layout_gravity="right" />
 
         <TextView
             android:text="X"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/tvSignal"
-            android:layout_weight="1"
             android:textStyle="normal|bold"
-            android:textSize="24sp"
-            android:textAlignment="center" />
+            android:textSize="30sp"
+            android:textAlignment="center"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp" />
 
         <TextView
             android:text="0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/tvSecondNumber"
-            android:layout_weight="1"
             android:textStyle="normal|bold"
-            android:textSize="24sp"
-            android:textAlignment="textStart" />
+            android:textSize="30sp"
+            android:layout_gravity="right" />
     </LinearLayout>
 
     <TextView
@@ -54,47 +110,25 @@
         android:layout_centerHorizontal="true"
         android:gravity="center_horizontal"
         android:textStyle="bold"
-        android:textSize="20sp"
-        android:id="@+id/tvResultDigitado" />
+        android:textSize="24sp"
+        android:id="@+id/tvResultDigitado"
+        android:background="@android:color/darker_gray"
+        android:paddingRight="10dp" />
 
     <TextView
         android:text="TextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/tvResultCalculado" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tvCountdown" />
-
-    <Button
-        android:text="Notification"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tvResultDigitado"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="54dp"
-        android:id="@+id/btnNotification" />
-
-    <Button
-        android:text="Scheduled Notification"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnScheduledNotification" />
-
-    <Button
-        android:text="Countdown"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnCountdown" />
+        android:id="@+id/tvResultCalculado"
+        android:visibility="gone" />
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:layout_gravity="center_horizontal">
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/linearNumericKeyboard">
 
         <GridLayout
             android:layout_width="wrap_content"
@@ -204,5 +238,13 @@
                 android:layout_column="0"/>
         </GridLayout>
     </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvCountdown"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:text="Countdown" />
 
 </LinearLayout>
