@@ -66,7 +66,7 @@ public class NotificationIntentService extends IntentService {
                 .setSmallIcon(R.mipmap.ic_launcher);
 
         PendingIntent pendingIntent = PendingIntent.getActivity(this, NOTIFICATION_ID,
-                new Intent(this, ResultActivity.class),
+                new Intent(this, MainActivity.class),
                 PendingIntent.FLAG_UPDATE_CURRENT);
         builder.setContentIntent(pendingIntent);
         builder.setDeleteIntent(NotificationEventReceiver.getDeleteIntent(this));

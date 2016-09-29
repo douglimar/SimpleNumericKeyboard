@@ -3,4 +3,8 @@
     <string name="tvResultGrid_Erros">Total de Erros</string>
     <string name="edtResultGrid_TotalAcertos">Total de Acertos</string>
     <string name="tvResultGrid_TotalTentativas">Total de Tentativas</string>
+    <string name="advertisement">Patrocínio</string>
+    <string name="banner_ad_unit_id">ca-app-pub-1098336821710456/5195031604</string>
+    <string name="banner_ad_unit_TESTE">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="contagem_regressiva_n_nvoc_tem_60_seg_para_resolver_o_maior_n_mero_de_quest_es">CONTAGEM REGRESSIVA\n\nVocê tem 60 seg. para resolver o maior número de questões</string>
 </resources>

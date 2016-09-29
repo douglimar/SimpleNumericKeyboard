@@ -1738,6 +1738,25 @@
                         "endOffset": 18445
                     }
                 }
+            },
+            {
+                "to": {
+                    "startLine": 253,
+                    "startColumn": 4,
+                    "startOffset": 18450,
+                    "endColumn": 121,
+                    "endOffset": 18567
+                },
+                "from": {
+                    "file": "C:\\Users\\dmoraes\\AndroidStudioProjects\\SimpleNumericKeyboard\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-appinvite\\9.6.1\\res\\values-v21\\values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 232,
+                        "endColumn": 121,
+                        "endOffset": 349
+                    }
+                }
             }
         ]
     }

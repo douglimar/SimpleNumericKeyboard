@@ -22,7 +22,7 @@ public class ResultActivity extends AppCompatActivity {
         TextView tvResult = (TextView) findViewById(R.id.tvResult2);
         float fPercentual = 0;
 
-        message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+        message = intent.getStringExtra(TableGameActivity.EXTRA_MESSAGE);
 
         String[] sResultados = message.split(";");
 

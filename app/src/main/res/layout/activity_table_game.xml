@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="br.com.ddmsoftware.simplenumerickeyboard.TableGameActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearMainCountainer">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/linearResult">
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/gridResult"
+                android:rowCount="2"
+                android:layout_gravity="center_horizontal"
+                android:columnCount="2">
+
+                <TextView
+                    android:text="@string/edtResultGrid_TotalAcertos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView3"
+                    android:layout_gravity="left"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:text="TextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvGridResult_TotalErros"
+                    android:layout_row="1"
+                    android:layout_column="1"
+                    android:layout_gravity="right" />
+
+                <TextView
+                    android:text="TextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvGridResult_TotalAcertos"
+                    android:layout_row="1"
+                    android:layout_column="0"
+                    android:layout_gravity="left" />
+
+                <TextView
+                    android:text="@string/tvResultGrid_Erros"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView4"
+                    android:layout_row="0"
+                    android:layout_column="1"
+                    android:layout_gravity="right"
+                    android:textStyle="bold" />
+            </GridLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:id="@+id/linearNumbers">
+
+            <TextView
+                android:text="0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvFirstNumber"
+                android:textStyle="normal|bold"
+                android:textSize="30sp"
+                android:layout_gravity="right" />
+
+            <TextView
+                android:text="X"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvSignal"
+                android:textStyle="normal|bold"
+                android:textSize="30sp"
+                android:textAlignment="center"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp" />
+
+            <TextView
+                android:text="0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvSecondNumber"
+                android:textStyle="normal|bold"
+                android:textSize="30sp"
+                android:layout_gravity="right" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"
+            android:textStyle="bold"
+            android:textSize="24sp"
+            android:id="@+id/tvResultDigitado"
+            android:background="@android:color/darker_gray"
+            android:paddingRight="10dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvResultCalculado"
+            android:visibility="gone"
+            android:text="0" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/linearNumericKeyboard">
+
+            <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:id="@+id/gridKeyboard"
+                android:columnCount="3"
+                android:rowCount="4"
+                android:layout_gravity="center_horizontal"
+                android:layout_centerHorizontal="true">
+
+                <Button
+                    android:text="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btnOne"
+                    android:elevation="0dp"
+                    android:layout_row="0"
+                    android:layout_column="0"/>
+
+                <Button
+                    android:text="2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btnTwo"
+                    android:layout_row="0"
+                    android:layout_column="1"/>
+
+                <Button
+                    android:text="3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btnThree"
+                    android:layout_row="0"
+                    android:layout_column="2"/>
+
+                <Button
+                    android:text="4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btnFour"
+                    android:layout_row="1"
+                    android:layout_column="0"/>
+
+                <Button
+                    android:text="5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btnFive"
+                    android:layout_row="1"
+                    android:layout_column="1"/>
+
+                <Button
+                    android:text="6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btnSix"
+                    android:layout_row="1"
+                    android:layout_column="2"/>
+
+                <Button
+                    android:text="7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btnSeven"
+                    android:layout_row="2"
+                    android:layout_column="0" />
+
+                <Button
+                    android:text="8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btnEight"
+                    android:layout_row="2"
+                    android:layout_column="1"/>
+
+                <Button
+                    android:text="9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btnNine"
+                    android:layout_row="2"
+                    android:layout_column="2"/>
+
+                <Button
+                    android:text="Enviar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btnSend"
+                    android:layout_row="3"
+                    android:layout_column="2" />
+
+                <Button
+                    android:text="0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btnZero"
+                    android:layout_row="3"
+                    android:layout_column="1" />
+
+                <Button
+                    android:text="Limpar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btnErase"
+                    android:layout_row="3"
+                    android:layout_column="0"/>
+            </GridLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvCountdown"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:text="Countdown" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnStartNewGame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="INICIAR NOVO \nTESTE DE MATEMÁTICA"
+        android:drawableLeft="@drawable/countdown2"
+        android:textAllCaps="false"
+        android:background="@android:color/holo_orange_light"
+        android:padding="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp" />
+
+</LinearLayout>
