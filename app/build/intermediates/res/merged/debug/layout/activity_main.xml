@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:ads="http://schemas.android.com/apk/res-auto"
     android:id="@+id/activity_main"
@@ -26,7 +25,7 @@
         android:id="@+id/btnCountdown"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="CONTAGEM REGRESSIVA\n\nVocê tem 60 seg. para resolver o maior número de questões"
+        android:text="@string/contagem_regressiva_n_nvoc_tem_60_seg_para_resolver_o_maior_n_mero_de_quest_es"
         android:drawableLeft="@drawable/countdown2"
         android:textAllCaps="false"
         android:background="@android:color/holo_orange_light"

@@ -7,4 +7,6 @@
     <string name="banner_ad_unit_id">ca-app-pub-1098336821710456/5195031604</string>
     <string name="banner_ad_unit_TESTE">ca-app-pub-3940256099942544/6300978111</string>
     <string name="contagem_regressiva_n_nvoc_tem_60_seg_para_resolver_o_maior_n_mero_de_quest_es">CONTAGEM REGRESSIVA\n\nVocê tem 60 seg. para resolver o maior número de questões</string>
+    <string name="btn_Iniciar_Teste_Matematica">INICIAR NOVO \nTESTE DE MATEMÁTICA</string>
+    <string name="limpar">Limpar</string>
 </resources>

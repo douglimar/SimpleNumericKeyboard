@@ -3610,6 +3610,7 @@ containing a value of this type.
         public static final int app_name=0x7f08006f;
         public static final int banner_ad_unit_TESTE=0x7f080070;
         public static final int banner_ad_unit_id=0x7f080071;
+        public static final int btn_Iniciar_Teste_Matematica=0x7f080072;
         public static final int cast_ad_label=0x7f080013;
         public static final int cast_casting_to_device=0x7f080014;
         public static final int cast_closed_captions=0x7f080015;
@@ -3624,8 +3625,8 @@ containing a value of this type.
         public static final int cast_forward_10=0x7f08001e;
         public static final int cast_forward_30=0x7f08001f;
         public static final int cast_intro_overlay_button_text=0x7f080020;
-        public static final int cast_invalid_stream_duration_text=0x7f080072;
-        public static final int cast_invalid_stream_position_text=0x7f080073;
+        public static final int cast_invalid_stream_duration_text=0x7f080073;
+        public static final int cast_invalid_stream_position_text=0x7f080074;
         public static final int cast_mute=0x7f080021;
         public static final int cast_notification_connected_message=0x7f080022;
         public static final int cast_notification_connecting_message=0x7f080023;
@@ -3669,14 +3670,16 @@ containing a value of this type.
         public static final int common_open_on_phone=0x7f080049;
         public static final int common_signin_button_text=0x7f08004a;
         public static final int common_signin_button_text_long=0x7f08004b;
-        public static final int create_calendar_message=0x7f080074;
-        public static final int create_calendar_title=0x7f080075;
-        public static final int debug_menu_ad_information=0x7f080076;
-        public static final int debug_menu_creative_preview=0x7f080077;
-        public static final int debug_menu_title=0x7f080078;
-        public static final int debug_menu_troubleshooting=0x7f080079;
-        public static final int decline=0x7f08007a;
-        public static final int edtResultGrid_TotalAcertos=0x7f08007b;
+        public static final int contagem_regressiva_n_nvoc_tem_60_seg_para_resolver_o_maior_n_mero_de_quest_es=0x7f080075;
+        public static final int create_calendar_message=0x7f080076;
+        public static final int create_calendar_title=0x7f080077;
+        public static final int debug_menu_ad_information=0x7f080078;
+        public static final int debug_menu_creative_preview=0x7f080079;
+        public static final int debug_menu_title=0x7f08007a;
+        public static final int debug_menu_troubleshooting=0x7f08007b;
+        public static final int decline=0x7f08007c;
+        public static final int edtResultGrid_TotalAcertos=0x7f08007d;
+        public static final int limpar=0x7f08007e;
         public static final int mr_button_content_description=0x7f08004c;
         public static final int mr_chooser_searching=0x7f08004d;
         public static final int mr_chooser_title=0x7f08004e;
@@ -3697,13 +3700,13 @@ containing a value of this type.
         public static final int place_autocomplete_search_hint=0x7f08005d;
         public static final int search_menu_title=0x7f08005e;
         public static final int status_bar_notification_info_overflow=0x7f08005f;
-        public static final int store_picture_message=0x7f08007c;
-        public static final int store_picture_title=0x7f08007d;
-        public static final int tagmanager_preview_dialog_button=0x7f08007e;
-        public static final int tagmanager_preview_dialog_message=0x7f08007f;
-        public static final int tagmanager_preview_dialog_title=0x7f080080;
-        public static final int tvResultGrid_Erros=0x7f080081;
-        public static final int tvResultGrid_TotalTentativas=0x7f080082;
+        public static final int store_picture_message=0x7f08007f;
+        public static final int store_picture_title=0x7f080080;
+        public static final int tagmanager_preview_dialog_button=0x7f080081;
+        public static final int tagmanager_preview_dialog_message=0x7f080082;
+        public static final int tagmanager_preview_dialog_title=0x7f080083;
+        public static final int tvResultGrid_Erros=0x7f080084;
+        public static final int tvResultGrid_TotalTentativas=0x7f080085;
         public static final int wallet_buy_button_place_holder=0x7f080060;
     }
     public static final class style {

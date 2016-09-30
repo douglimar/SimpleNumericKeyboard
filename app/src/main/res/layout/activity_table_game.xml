@@ -118,6 +118,7 @@
             android:textSize="24sp"
             android:id="@+id/tvResultDigitado"
             android:background="@android:color/darker_gray"
+            android:paddingEnd="10dp"
             android:paddingRight="10dp" />
 
         <TextView
@@ -138,19 +139,17 @@
             <GridLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
                 android:id="@+id/gridKeyboard"
                 android:columnCount="3"
                 android:rowCount="4"
                 android:layout_gravity="center_horizontal"
-                android:layout_centerHorizontal="true">
+                >
 
                 <Button
                     android:text="1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/btnOne"
-                    android:elevation="0dp"
                     android:layout_row="0"
                     android:layout_column="0"/>
 
@@ -235,7 +234,7 @@
                     android:layout_column="1" />
 
                 <Button
-                    android:text="Limpar"
+                    android:text="@string/limpar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/btnErase"
@@ -258,7 +257,7 @@
         android:id="@+id/btnStartNewGame"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="INICIAR NOVO \nTESTE DE MATEMÁTICA"
+        android:text="@string/btn_Iniciar_Teste_Matematica"
         android:drawableLeft="@drawable/countdown2"
         android:textAllCaps="false"
         android:background="@android:color/holo_orange_light"
