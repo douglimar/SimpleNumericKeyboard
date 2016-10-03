@@ -3,6 +3,9 @@ package br.com.ddmsoftware.simplenumerickeyboard;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,11 +19,24 @@ public class ResultActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        TextView tvResultAcertos =  (TextView)findViewById(R.id.textView9);
-        TextView tvResultErros =  (TextView)findViewById(R.id.textView10);
+        Button btnVoltar = (Button)findViewById(R.id.btnVoltar) ;
+
+        TextView tvResultAcertos =  (TextView)findViewById(R.id.tvTotalAcertos);
+        TextView tvResultErros =  (TextView)findViewById(R.id.tvTotalErros);
         TextView tvResultPercAcerto =  (TextView)findViewById(R.id.textView11);
         TextView tvResult = (TextView) findViewById(R.id.tvResult2);
+        ImageView imgResultOK = (ImageView) findViewById(R.id.imgResultIcon);
+
+        imgResultOK.setImageResource(R.drawable.iconok);
+
         float fPercentual = 0;
+
+        btnVoltar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         message = intent.getStringExtra(TableGameActivity.EXTRA_MESSAGE);
 
@@ -40,8 +56,10 @@ public class ResultActivity extends AppCompatActivity {
         if( fPercentual >= 50)
             tvResult.setText("Você esta no caminho certo, mas pode melhorar.");
         else
-        if( fPercentual < 50)
+        if( fPercentual < 50) {
             tvResult.setText("Vamos estudar um pouco mais.");
+            imgResultOK.setImageResource(R.drawable.iconnok);
+        }
 
     }
 }

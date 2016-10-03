@@ -9,4 +9,7 @@
     <string name="contagem_regressiva_n_nvoc_tem_60_seg_para_resolver_o_maior_n_mero_de_quest_es">CONTAGEM REGRESSIVA\n\nVocê tem 60 seg. para resolver o maior número de questões</string>
     <string name="btn_Iniciar_Teste_Matematica">INICIAR NOVO \nTESTE DE MATEMÁTICA</string>
     <string name="limpar">Limpar</string>
+    <string name="Countdown">Tempo Restante:</string>
+    <string name="resultadoGeral">RESULTADO GERAL</string>
+    <string name="TotalAcertos">Total Acertos</string>
 </resources>

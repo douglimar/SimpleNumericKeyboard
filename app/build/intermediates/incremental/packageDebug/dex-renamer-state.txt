@@ -1,7 +1,7 @@
-#Thu Sep 29 17:09:44 BRT 2016
-base.0=C\:\\Users\\dmoraes\\AndroidStudioProjects\\SimpleNumericKeyboard\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
+#Sun Oct 02 18:08:07 BRT 2016
+base.0=/home/douglimar/workspace/AndroidStudioProjects/SimpleNumericKeyboard/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_0c61c4196cc3b151ca6d6435f46f1d0596d3950d
 renamed.1=classes2.dex
 renamed.0=classes.dex
-file.1=C\:\\Users\\dmoraes\\AndroidStudioProjects\\SimpleNumericKeyboard\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes2.dex
-base.1=C\:\\Users\\dmoraes\\AndroidStudioProjects\\SimpleNumericKeyboard\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
-file.0=C\:\\Users\\dmoraes\\AndroidStudioProjects\\SimpleNumericKeyboard\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex
+file.1=/home/douglimar/workspace/AndroidStudioProjects/SimpleNumericKeyboard/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_5749cbd6a25fbb4982bd67c8987d45c98687da6c/classes.dex
+base.1=/home/douglimar/workspace/AndroidStudioProjects/SimpleNumericKeyboard/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_5749cbd6a25fbb4982bd67c8987d45c98687da6c
+file.0=/home/douglimar/workspace/AndroidStudioProjects/SimpleNumericKeyboard/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_0c61c4196cc3b151ca6d6435f46f1d0596d3950d/classes.dex

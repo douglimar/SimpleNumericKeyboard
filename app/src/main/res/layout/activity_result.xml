@@ -1,112 +1,147 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.dmoraes.mathtablesgame.ResultActivity">
+    tools:context="com.example.dmoraes.mathtablesgame.ResultActivity"
+    android:weightSum="1">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="37dp"
+        android:background="@color/wallet_holo_blue_light"
+        android:padding="10dp"
         android:layout_height="wrap_content">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Resultado"
+            android:text="@string/resultadoGeral"
             android:id="@+id/textView6"
             android:layout_gravity="center_horizontal"
             android:textStyle="bold"
-            android:textSize="24dp"
-            android:gravity="center_horizontal" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="50px"
-            android:layout_gravity="center_horizontal" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Total Acertos"
-            android:id="@+id/textView4"
+            android:textSize="18sp"
             android:gravity="center_horizontal"
-            android:textStyle="bold"
-            android:layout_gravity="center_horizontal"
-            android:textSize="20dp" />
+            android:layout_marginBottom="10dp" />
 
-        <TextView
+        <GridLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/textView9"
-            android:layout_gravity="left|center_horizontal"
-            android:textSize="30dp"
-            android:textStyle="bold"
-            android:text="10"
-            android:gravity="center_horizontal"
-            android:textColor="@color/accent_material_light" />
+            android:id="@+id/gridResult"
+            android:rowCount="4"
+            android:columnCount="3"
+            android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:text="@string/edtResultGrid_TotalAcertos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView3"
+                android:layout_row="0"
+                android:layout_weight="1"
+                android:layout_column="0"
+                android:textStyle="bold" />
+
+            <TextView
+                android:text="TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvTotalAcertos"
+                android:layout_row="1"
+                android:layout_weight="1"
+                android:layout_column="0"
+                android:textColor="@android:color/holo_green_dark"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                tools:textColor="#14835c" />
+
+            <TextView
+                android:text="@string/tvResultGrid_Erros"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView4"
+                android:layout_row="0"
+                android:layout_weight="1"
+                android:layout_column="2"
+                android:textStyle="bold"
+                android:layout_gravity="right" />
+
+            <TextView
+                android:text="TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvTotalErros"
+                android:layout_weight="1"
+                android:layout_row="1"
+                android:layout_column="2"
+                android:textColor="@android:color/holo_red_dark"
+                android:textStyle="bold"
+                android:layout_gravity="right"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="% Acertos"
+                android:id="@+id/textView8"
+                android:textStyle="bold"
+                android:layout_columnSpan="3"
+                android:layout_gravity="center_horizontal"
+                android:layout_column="0"
+                android:layout_row="0" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView11"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:layout_column="0"
+                android:layout_columnSpan="3"
+                android:layout_gravity="center_horizontal"
+                android:layout_row="1"
+                android:text="40"
+                android:textColor="#14835c"
+                android:textSize="18sp" />
+        </GridLayout>
 
         <TextView
+            android:text="TextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Total Erros"
-            android:id="@+id/textView7"
-            android:textStyle="bold"
-            android:layout_gravity="center_horizontal"
-            android:textSize="20dp"
-            android:gravity="center_horizontal" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView10"
-            android:layout_gravity="center_horizontal"
-            android:textSize="30dp"
-            android:textStyle="bold"
-            android:text="30"
-            android:gravity="center_horizontal"
-            android:textColor="@color/accent_material_light" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="% Acertos"
-            android:id="@+id/textView8"
-            android:textStyle="bold"
-            android:textSize="20dp"
-            android:layout_gravity="center_horizontal"
-            android:gravity="center_horizontal" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView11"
-            android:layout_gravity="center_horizontal"
-            android:textSize="30dp"
-            android:textStyle="bold"
-            android:text="40"
-            android:gravity="center_horizontal"
-            android:textColor="@color/accent_material_light" />
-
-        <Space
-            android:layout_width="20px"
-            android:layout_height="40px" />
-
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Large Text"
             android:id="@+id/tvResult2"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
             android:layout_gravity="center_horizontal"
-            android:gravity="center_horizontal"
-            android:textColor="@color/bright_foreground_disabled_material_light"
-            android:textStyle="bold" />
+            android:gravity="center_horizontal" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/iconok"
+            android:id="@+id/imgResultIcon" />
+
     </LinearLayout>
 
-</RelativeLayout>
+    <Button
+        android:text="Voltar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnVoltar"
+        android:layout_weight="0.08"
+        android:background="@color/cardview_shadow_start_color"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp" />
+
+</LinearLayout>
