@@ -11,7 +11,6 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="br.com.ddmsoftware.simplenumerickeyboard.TableGameActivity"
-    android:elevation="1dp"
     android:background="@drawable/backgroundv4">
 
     <LinearLayout
@@ -41,28 +40,26 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView3"
-                    android:layout_gravity="left"
+                    android:layout_gravity="start"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:text="TextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/tvGridResult_TotalErros"
                     android:layout_row="1"
                     android:layout_column="1"
-                    android:layout_gravity="right"
+                    android:layout_gravity="end"
                     android:textColor="@android:color/holo_red_dark"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:text="TextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/tvGridResult_TotalAcertos"
                     android:layout_row="1"
                     android:layout_column="0"
-                    android:layout_gravity="left"
+                    android:layout_gravity="start"
                     android:textColor="@android:color/holo_green_dark"
                     android:textStyle="bold"
                     />
@@ -74,7 +71,7 @@
                     android:id="@+id/textView4"
                     android:layout_row="0"
                     android:layout_column="1"
-                    android:layout_gravity="right"
+                    android:layout_gravity="end"
                     android:textStyle="bold" />
             </GridLayout>
         </LinearLayout>
@@ -88,16 +85,16 @@
             android:id="@+id/linearNumbers">
 
             <TextView
-                android:text="0"
+                android:text="@string/_0"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/tvFirstNumber"
                 android:textStyle="normal|bold"
                 android:textSize="30sp"
-                android:layout_gravity="right" />
+                android:layout_gravity="end" />
 
             <TextView
-                android:text="X"
+                android:text="@string/x"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/tvSignal"
@@ -108,24 +105,25 @@
                 android:paddingRight="5dp" />
 
             <TextView
-                android:text="0"
+                android:text="@string/_0"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/tvSecondNumber"
                 android:textStyle="normal|bold"
                 android:textSize="30sp"
-                android:layout_gravity="right" />
+                android:layout_gravity="end" />
         </LinearLayout>
 
         <TextView
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
             android:gravity="center_horizontal"
             android:textStyle="bold"
             android:textSize="24sp"
             android:id="@+id/tvResultDigitado"
             android:background="@android:color/holo_orange_light"
             android:paddingEnd="10dp"
+            android:paddingStart="10dp"
+            android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:layout_gravity="center_horizontal"
             android:layout_width="260dp" />
@@ -135,7 +133,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/tvResultCalculado"
             android:visibility="gone"
-            android:text="0" />
+            android:text="@string/_0" />
 
         <LinearLayout
             android:orientation="horizontal"
@@ -155,7 +153,7 @@
                 >
 
                 <Button
-                    android:text="1"
+                    android:text="@string/_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/btnOne"
@@ -163,7 +161,7 @@
                     android:layout_column="0"/>
 
                 <Button
-                    android:text="2"
+                    android:text="@string/_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/btnTwo"
@@ -171,7 +169,7 @@
                     android:layout_column="1"/>
 
                 <Button
-                    android:text="3"
+                    android:text="@string/_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/btnThree"
@@ -179,7 +177,7 @@
                     android:layout_column="2"/>
 
                 <Button
-                    android:text="4"
+                    android:text="@string/_4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/btnFour"
@@ -187,7 +185,7 @@
                     android:layout_column="0"/>
 
                 <Button
-                    android:text="5"
+                    android:text="@string/_5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/btnFive"
@@ -195,7 +193,7 @@
                     android:layout_column="1"/>
 
                 <Button
-                    android:text="6"
+                    android:text="@string/_6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/btnSix"
@@ -203,7 +201,7 @@
                     android:layout_column="2"/>
 
                 <Button
-                    android:text="7"
+                    android:text="@string/_7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/btnSeven"
@@ -211,7 +209,7 @@
                     android:layout_column="0" />
 
                 <Button
-                    android:text="8"
+                    android:text="@string/_8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/btnEight"
@@ -219,7 +217,7 @@
                     android:layout_column="1"/>
 
                 <Button
-                    android:text="9"
+                    android:text="@string/_9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/btnNine"
@@ -227,7 +225,7 @@
                     android:layout_column="2"/>
 
                 <Button
-                    android:text="Enviar"
+                    android:text="@string/enviar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/btnSend"
@@ -237,7 +235,7 @@
                     android:textStyle="bold" />
 
                 <Button
-                    android:text="0"
+                    android:text="@string/_0"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/btnZero"
@@ -290,6 +288,7 @@
         android:layout_height="wrap_content"
         android:text="@string/btn_Iniciar_Teste_Matematica"
         android:drawableLeft="@drawable/countdown2"
+        android:drawableStart="@drawable/countdown2"
         android:textAllCaps="false"
         android:background="@android:color/holo_orange_light"
         android:padding="10dp"
@@ -299,12 +298,14 @@
         android:layout_centerHorizontal="true" />
 
     <Button
-        android:text="Voltar"
+        android:text="@string/voltar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/button2"
         android:background="@color/cardview_shadow_start_color"
         android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp" />
-
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/btnStartNewGame"
+        android:id="@+id/btnVoltar1" />
 </RelativeLayout>

@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button btnCountdown = (Button)findViewById(R.id.btnCountdown);
+        Button btnFreeTime = (Button)findViewById(R.id.btnFreeTime);
 
         // Create a AdView
         // Load Advertisement Banner
@@ -31,6 +32,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), TableGameActivity.class);
+                intent.putExtra("StartCountdown:",true);
+
+                startActivity(intent);
+            }
+        });
+
+        btnFreeTime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), FreeTimeActivity.class);
+                intent.putExtra("StartCountdown:",false);
 
                 startActivity(intent);
             }

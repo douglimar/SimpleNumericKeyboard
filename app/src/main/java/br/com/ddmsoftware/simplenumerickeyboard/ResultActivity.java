@@ -29,7 +29,7 @@ public class ResultActivity extends AppCompatActivity {
 
         imgResultOK.setImageResource(R.drawable.iconok);
 
-        float fPercentual = 0;
+        float fPercentual;
 
         btnVoltar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,23 +41,23 @@ public class ResultActivity extends AppCompatActivity {
         message = intent.getStringExtra(TableGameActivity.EXTRA_MESSAGE);
 
         String[] sResultados = message.split(";");
-
+        String sPercAcerto = sResultados[2] + "%";
 
         tvResultAcertos.setText(sResultados[0]);
         tvResultErros.setText(sResultados[1]);
-        tvResultPercAcerto.setText(sResultados[2] + "%");
+        tvResultPercAcerto.setText(sPercAcerto);
         fPercentual = Float.parseFloat(sResultados[2]);
 
         Toast.makeText(ResultActivity.this, sResultados[0] + ";" + sResultados[1] + ";" + sResultados[2], Toast.LENGTH_SHORT).show();
 
         if( fPercentual >= 80)
-            tvResult.setText("Parabéns. Você esta no caminho certo.");
+            tvResult.setText(R.string.final_message80Perc);
         else
         if( fPercentual >= 50)
-            tvResult.setText("Você esta no caminho certo, mas pode melhorar.");
+            tvResult.setText(R.string.final_message50Perc);
         else
         if( fPercentual < 50) {
-            tvResult.setText("Vamos estudar um pouco mais.");
+            tvResult.setText(R.string.final_messageLess50Perc);
             imgResultOK.setImageResource(R.drawable.iconnok);
         }
 

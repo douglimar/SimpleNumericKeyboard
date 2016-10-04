@@ -23,11 +23,15 @@ public class TableGameActivity extends AppCompatActivity {
 
     Timer timer;
 
-    public static final String EXTRA_MESSAGE = new String ("br.com.ddmsoftware.simplenumerickeyboard.MESSAGE");
+    public static final String EXTRA_MESSAGE = "br.com.ddmsoftware.simplenumerickeyboard.MESSAGE";
 
+    String sResultado = "";
     Button btnStartNewGame;
+    Button btnVoltar;
     MediaPlayer errorSound;
     MediaPlayer okSound;
+
+    Boolean bExtras_StartCountdown_Game;
 
     Character[] aSignal = {'+', '-', '/', 'x'};
     Boolean bZeroDivision = false;
@@ -40,7 +44,7 @@ public class TableGameActivity extends AppCompatActivity {
     float iOldSecondNumber = 0;
 
     boolean STOP_COUNTDOWN = false;
-    boolean TO_VAZANDO = false;
+    boolean bRestartApp = true;
     //boolean FIRST_RUN = true;
 
     LinearLayout linearMainCountainer;
@@ -54,15 +58,19 @@ public class TableGameActivity extends AppCompatActivity {
     TextView tvGridResult_TotAcertos;
     TextView tvGridResult_TotErros;
 
-    TextView textView;
+    //TextView textView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_table_game);
 
+        Bundle extras = getIntent().getExtras();
+
+        bExtras_StartCountdown_Game = extras.getBoolean("StartCountdown:");
+
         linearMainCountainer = (LinearLayout) findViewById(R.id.linearMainCountainer);
 
-        textView = (TextView)findViewById(R.id.tvResultDigitado);
+        //textView = (TextView)findViewById(R.id.tvResultDigitado);
         tvNumber1 = (TextView)findViewById(R.id.tvFirstNumber);
         tvNumber2 = (TextView)findViewById(R.id.tvSecondNumber);
         tvSignal = (TextView) findViewById(R.id.tvSignal);
@@ -86,7 +94,9 @@ public class TableGameActivity extends AppCompatActivity {
         final Button btnZero = (Button) findViewById(R.id.btnZero);
         final Button btnSend = (Button)findViewById(R.id.btnSend);
         final Button btnErase = (Button) findViewById(R.id.btnErase);
+
         btnStartNewGame = (Button)findViewById(R.id.btnStartNewGame);
+        btnVoltar = (Button)findViewById(R.id.btnVoltar1);
 
         errorSound = MediaPlayer.create(TableGameActivity.this, R.raw.error);
         okSound = MediaPlayer.create(TableGameActivity.this,R.raw.ok);
@@ -198,6 +208,13 @@ public class TableGameActivity extends AppCompatActivity {
             }
         });
 
+        btnVoltar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
         btnStartNewGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -207,6 +224,7 @@ public class TableGameActivity extends AppCompatActivity {
                 tableGame.loadAdvertisement();
 
                 btnStartNewGame.setVisibility(View.INVISIBLE);
+                btnVoltar.setVisibility(View.INVISIBLE);
                 linearMainCountainer.setVisibility(View.VISIBLE);
             }
         });
@@ -217,7 +235,7 @@ public class TableGameActivity extends AppCompatActivity {
     protected void onDestroy(){
         super.onDestroy();
 
-        Toast.makeText(getApplicationContext(), "Passei no OnDestroy", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "Passei no OnDestroy", Toast.LENGTH_LONG).show();
 
         tableGame.stopCountDown();
     }
@@ -225,14 +243,37 @@ public class TableGameActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        btnStartNewGame.setVisibility(View.VISIBLE);
-        linearMainCountainer.setVisibility(View.INVISIBLE);
 
-        timer = new Timer();
+        if (bRestartApp) {
+
+            sResultado = "";
+            bRestartApp = false;
+
+            Toast.makeText(getApplicationContext(), "Passei no ON_RESUME", Toast.LENGTH_LONG).show();
+
+            btnVoltar.setVisibility(View.VISIBLE);
+            btnStartNewGame.setVisibility(View.VISIBLE);
+            linearMainCountainer.setVisibility(View.INVISIBLE);
+
+            timer = new Timer();
+        }
+
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        bRestartApp = !sResultado.equals("");
+
+        Toast.makeText(getApplicationContext(), "Passei no ON_PAUSE: " + sResultado, Toast.LENGTH_LONG).show();
+
     }
 
     private void getKeyboardEntry(Button mButtonText) {
-        textView.setText(textView.getText()+ mButtonText.getText().toString());
+
+        String strResult = tvResultDigitado.getText()+ mButtonText.getText().toString();
+        tvResultDigitado.setText(strResult);
     }
 
     public class TableGame {
@@ -249,7 +290,7 @@ public class TableGameActivity extends AppCompatActivity {
             tvGridResult_TotAcertos.setText("");
             tvGridResult_TotErros.setText("");
             tvCountDown.setText("");
-            textView.setText("");
+            //textView.setText("");
 
         }
 
@@ -266,7 +307,7 @@ public class TableGameActivity extends AppCompatActivity {
 
                     STOP_COUNTDOWN = false;
 
-                    if ( (i<= 0) || (STOP_COUNTDOWN==true)) {
+                    if ( (i<= 0) || (STOP_COUNTDOWN)) {
                         timer.cancel();
 
                         i = 0 ;
@@ -287,13 +328,11 @@ public class TableGameActivity extends AppCompatActivity {
 
                                 Toast.makeText(TableGameActivity.this, "Total de Acertos: " + iCountAcertos + "\n + Total de Erros: " + iCountErros, Toast.LENGTH_SHORT).show();
 
-                                String strResultado = "Time is up\n================" +
-                                        "\nTotal de Acertos: " + iCountAcertos +
-                                        "\nTotal de Erros: " + iCountErros ;
-
-                                String sResultado = iCountAcertos +";" + iCountErros + ";" + fPercAcertos;
+                                sResultado = iCountAcertos +";" + iCountErros + ";" + fPercAcertos;
 
                                 Toast.makeText(getApplicationContext(), sResultado, Toast.LENGTH_LONG).show();
+
+                                bRestartApp = true;
 
                                 // Exibe resultado em outra Activity
                                 Intent intent = new Intent(getApplication(), ResultActivity.class);
@@ -321,6 +360,8 @@ public class TableGameActivity extends AppCompatActivity {
                 generateNewCalc();
 
                 // Iniciar a Contagem Regressiva
+
+                if (bExtras_StartCountdown_Game)
                 startCountDown("61");
             }
         }
@@ -338,7 +379,7 @@ public class TableGameActivity extends AppCompatActivity {
             //String sSignal = "/";//aSignal[iSignal].toString();
 
             bZeroDivision = false;
-            int resto = 0;
+            int resto;
             float Result = 0;
 
             //clearFields(false);
@@ -366,7 +407,7 @@ public class TableGameActivity extends AppCompatActivity {
                 }
             }
 
-            if (bZeroDivision == false) {
+            if (!bZeroDivision) {
 
                 String sFirstNumber = String.format("%.0f", iFirstNumber);
                 String sSecondNumber = String.format("%.0f", iSecondNumber);
@@ -375,7 +416,7 @@ public class TableGameActivity extends AppCompatActivity {
                 String sResult = String.format("%.0f", Result);
 
                 tvNumber1.setText(sFirstNumber);
-                tvSignal.setText(sSignal.toString());
+                tvSignal.setText(sSignal);
                 tvNumber2.setText(sSecondNumber);
                 tvResultCalculado.setText(sResult);
             }
@@ -406,7 +447,7 @@ public class TableGameActivity extends AppCompatActivity {
             //String sSignal = "/";//aSignal[iSignal].toString();
 
             bZeroDivision = false;
-            int resto = 0;
+            int resto;
             float Result = 0;
 
             //clearFields(false);
@@ -434,7 +475,7 @@ public class TableGameActivity extends AppCompatActivity {
                 }
             }
 
-            if (bZeroDivision == false) {
+            if (!bZeroDivision) {
 
                 String sFirstNumber = String.format("%.0f", iFirstNumber);
                 String sSecondNumber = String.format("%.0f", iSecondNumber);
@@ -443,7 +484,7 @@ public class TableGameActivity extends AppCompatActivity {
                 String sResult = String.format("%.0f", Result);
 
                 tvNumber1.setText(sFirstNumber);
-                tvSignal.setText(sSignal.toString());
+                tvSignal.setText(sSignal);
                 tvNumber2.setText(sSecondNumber);
                 tvResultCalculado.setText(sResult);
             }
@@ -451,14 +492,9 @@ public class TableGameActivity extends AppCompatActivity {
 
         private boolean validateResult(int pCalculatedValue, int pTypedValue) {
             boolean ok;
-            if (pCalculatedValue == pTypedValue) {
-                ok = true;
-                //okSound.start();
-            }
-            else {
-                ok = false;
-                //zerrorSound.start();
-            }
+            //okSound.start();
+//zerrorSound.start();
+            ok = pCalculatedValue == pTypedValue;
             return ok;
         }
 
